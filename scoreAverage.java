@@ -4,51 +4,52 @@ import java.util.Scanner;
 
 /*
 
-* 功能：根据用户输入的班级数、班级人数、班级里每位学生的成绩；分别计算各个班级的平均分数并将其输出。
+ * 功能：根据用户输入的班级数、班级人数、班级里每位学生的成绩；分别计算各个班级的平均分数并将其输出。
 
-*/
+ */
 
 public class One {
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 
-Scanner input =new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 
-System.out.println("输入班级数：");
+		System.out.println("输入班级数：");
 
-int classNum = input.nextInt();//输入班级数
+		int classNum = input.nextInt();// 输入班级数
 
-double sum = 0;//每个班级的总成绩
+		double sum = 0;// 每个班级的总成绩
 
-for(int i = 1; i <= classNum; i++){//遍历班级
+		for (int i = 1; i <= classNum; i++) {// 遍历班级
 
-System.out.println("输入第"+ i +"个班级的学生人数：");
+			System.out.println("输入第" + i + "个班级的学生人数：");
 
-int stuNum = input.nextInt();//输入每个班级的学生人数
+			int stuNum = input.nextInt();// 输入每个班级的学生人数
 
-System.out.println("分别输入他们的成绩：");
+			System.out.println("分别输入他们的成绩：");
 
-for(int j = 1; j <= stuNum; j++){//遍历每个班级的学生人数输入每位学生的成绩
+			for (int j = 1; j <= stuNum; j++) {// 遍历每个班级的学生人数输入每位学生的成绩
 
-double score = input.nextDouble();//输入每位学生的成绩
+				double score = input.nextDouble();// 输入每位学生的成绩
 
-sum += score;//对每位学生的成绩进行累加
+				sum += score;// 对每位学生的成绩进行累加
+
+			}
+
+			System.out.println("第" + i + "个班级的平均分为：");
+
+			double averScore = (sum / stuNum);// 求每个班级的平均成绩
+
+			System.out.println(averScore);
+
+			sum = 0;// 总成绩清零，对下一个班级的成绩重新进行累加
+
+		}
+
+	}
 
 }
 
-System.out.println("第"+ i +"个班级的平均分为：");
-
-double averScore = (sum/stuNum) ;//求每个班级的平均成绩
-
-System.out.println(averScore);
-
-sum = 0;//总成绩清零，对下一个班级的成绩重新进行累加
-
-}
-
-}
-
-}
 
 bug1: score设为int值却输入带有小数点的值。
 
